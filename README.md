@@ -6,11 +6,26 @@ Format PCM data stream
 
 ## Example usage
 ```js
-var pcm-format = require('pcm-format');
+var PcmFormatTransform = require('pcm-format');
 
-// Do whatever you want with 'pcm-format'!
+process.stdin
+.pipe(new PcmFormatTransform(
+    { float: true }, // in format
+    { float: false, signed: true, bitDepth: 16, byteOrder: 'BE' } // out format
+))
+.pipe(process.stdout);
+
+// In and out format objects support all the same parameters
+// (float, signed, bitDepth, byteOrder),
+// and all other properties are ignored.
+
+// 'byteOrder' is either 'LE' or 'BE', a la os.endianness(),
+// and defaults to the OS's endianness. It can be ignored if bitDepth is 8.
+// If 'float' is true, 'signed' is always true and 'bitDepth' is always 32.
+
+// The format objects are modeled after 'TooTallNate/node-speaker' and similar modules.
 ```
-    
+
 ## License
 The MIT License (MIT)
 
