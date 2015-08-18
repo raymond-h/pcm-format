@@ -1,0 +1,22 @@
+Usage: pcm-format [options...] [file]
+
+    Convert format of PCM data.
+    If no file specified, reads input from standard in.
+    If no output file is specified, writes output to standard out.
+
+Options:
+    --help, -h                Show this help output
+    --in-format, --if         Input PCM format options (see below), inside of [ ]
+    --out-format, --of        Output PCM format options (see below), inside of [ ]
+    --out, -o                 Output file
+
+PCM format options:
+    --float                   Floating-point samples (always signed 32-bit)
+    --signed                  Signed samples
+    --bit-depth               Bit depth per sample [8, 16 or 32]
+    --byte-order              Endianness of samples if bit depth > 8 ['LE' or 'BE']
+    --little-endian, --le     Same as '--byte-order LE'
+    --big-endian, --be        Same as '--byte-order BE'
+
+Example:
+    pcm-format --if [--float --be] --of [--signed --bit-depth=32] -o audio2.wav audio.wav
