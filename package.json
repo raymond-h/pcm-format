@@ -1,12 +1,15 @@
 {
   "name": "pcm-format",
   "description": "Format PCM data stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "lib/index.js",
   "author": "Raymond Hammarling",
   "repository": "https://github.com/raymond-h/pcm-format",
-  "keywords": ["pcm", "format"],
+  "keywords": [
+    "pcm",
+    "format"
+  ],
   "scripts": {
     "lint": "eslint src/ test/",
     "test": "mocha --compilers js:babel/register test/",
