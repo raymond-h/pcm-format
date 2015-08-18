@@ -1,8 +1,8 @@
-import os from 'os';
+import { defaults } from './format';
 
 // sample is buffer, format is obj, return -1..1 float sample
-export function normalize(sample, { float, signed, bitDepth, byteOrder }) {
-    if(byteOrder == null) byteOrder = os.endianness();
+export function normalize(sample, format) {
+    const { float, signed, bitDepth, byteOrder } = defaults(format);
 
     if(float) {
         // signed = true, bit depth = 32
@@ -21,11 +21,8 @@ export function normalize(sample, { float, signed, bitDepth, byteOrder }) {
 }
 
 // sample is -1..1 float sample, format is obj, return buffer
-export function output(normSample, { float, signed, bitDepth, byteOrder }, buffer) {
-    if(bitDepth <= 8) byteOrder = '';
-    else if(byteOrder == null) byteOrder = 'LE';
-
-    if(float) { bitDepth = 32; }
+export function output(normSample, format, buffer) {
+    const { float, signed, bitDepth, byteOrder } = defaults(format);
 
     buffer = buffer != null ? buffer : new Buffer(bitDepth / 8);
 

@@ -1,17 +1,6 @@
-import os from 'os';
 import stream from 'stream';
 import * as sample from './sample';
-
-function defaults(format) {
-    if(format.byteOrder == null) format.byteOrder = os.endianness();
-
-    if(format.float) {
-        format.bitDepth = 32;
-        format.signed = true;
-    }
-
-    return format;
-}
+import { defaults } from './format';
 
 export default class PcmFormatTransform extends stream.Transform {
     constructor(inFormat, outFormat) {
