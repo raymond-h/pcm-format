@@ -13,7 +13,7 @@ export default class PcmFormatTransform extends stream.Transform {
     }
 
     _transform(chunk, enc, done) {
-        if(this.rest != null) chunk = Buffer.concat(this.rest, chunk);
+        if(this.rest != null) chunk = Buffer.concat([this.rest, chunk]);
 
         const inSampleSize = this.inFormat.bitDepth / 8;
         const outSampleSize = this.outFormat.bitDepth / 8;
