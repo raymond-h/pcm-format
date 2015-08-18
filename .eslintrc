@@ -1,0 +1,19 @@
+{
+    "extends": "kellyirc",
+    "parser": "babel-eslint",
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "rules": {
+        "constructor-super": 2,
+        "no-this-before-super": 2,
+        "no-var": 2,
+        "object-shorthand": [2, "always"],
+        "prefer-const": 2,
+        "new-cap": 0,
+        "object-curly-spacing": [2, "always"],
+        "no-undef": 2,
+        "quotes": [2, "single", "avoid-escape"]
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "pcm-format",
+  "description": "Format PCM data stream",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "author": "Raymond Hammarling",
+  "scripts": {
+    "lint": "eslint src/ test/",
+    "test": "mocha --compilers js:babel/register test/",
+    "build": "babel  -d lib/ src/",
+    "pretest": "npm run lint",
+    "prebuild": "npm run test",
+    "watch": "onchange src/ test/ -- npm run build && echo Done",
+    "watch:test": "npm run test -- --watch",
+    "dev": "npm run watch:test",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.10",
+    "chai": "^3.2.0",
+    "eslint": "^1.1.0",
+    "eslint-config-kellyirc": "^2.0.0",
+    "mocha": "^2.2.5",
+    "onchange": "^2.0.0"
+  }
+}
