@@ -5,6 +5,8 @@
   "license": "MIT",
   "main": "lib/index.js",
   "author": "Raymond Hammarling",
+  "repository": "https://github.com/raymond-h/pcm-format",
+  "keywords": ["pcm", "format"],
   "scripts": {
     "lint": "eslint src/ test/",
     "test": "mocha --compilers js:babel/register test/",
