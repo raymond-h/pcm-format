@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "lodash.camelcase": "^3.0.1",
-    "subarg": "^1.0.0",
-    "yargs": "^3.19.0"
+    "subarg": "^1.0.0"
   }
 }
