@@ -36,4 +36,4 @@ export default class PcmFormatTransform extends stream.Transform {
     }
 }
 
-export { sample };
+PcmFormatTransform.sample = sample;
